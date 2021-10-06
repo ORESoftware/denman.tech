@@ -3,7 +3,7 @@
 
 (
 
-  set -e -o pipefail
+  set -e -o pipefail ;
 
   if ! (command -v static) &> /dev/null; then
      (npm i -g node-static) || {
@@ -11,7 +11,7 @@
      }
   fi
 
-  echo 'oresoftware.com' >> public/CNAME ;
-  cd public && static . ;
+  # echo 'oresoftware.com' >> public/CNAME ;
+  cd docs && static . ;
 
 )
